@@ -23,7 +23,7 @@ $user->phone = $request->phone;
 if($user->save){
     return ['result'=>'user added'];
 }else{
-    return['result'=>'user not added'];
+    return['result'=>'user  dintnot added'];
 }
     }
 
@@ -37,8 +37,14 @@ if($user->save){
 }else{
     return['result'=>'user not updated'];
 }
-
-
-
+}
+function DeleteUser($id) {
+    $user =User ::destroy($id); 
+    if($user){
+        return['result'=>'user deleted'];
+    
+    }else{
+        return['result'=>'user not deleted'];
+    }
 }
 }

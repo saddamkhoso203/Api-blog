@@ -17,3 +17,4 @@ Route::get('/users',[StudentController::class,'list']);
 
 Route::post('AddUser',[StudentController::class,'AddUser']);
 Route::put('UpdateUser',[StudentController::class,'UpdateUser']);
+Route::delete('DeleteUser/{id}',[StudentController::class,'DeleteUser']);
