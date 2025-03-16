@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Models;
+use \App\Models\users;
 
 class UserAuthController extends Controller
 {
@@ -12,7 +14,9 @@ class UserAuthController extends Controller
         return ("login function");
     }
     function signup(Request $request){
+      
         $input=$request->all();
+       
         $request['password']=bcrypt($request['passsword']);
         $user=User::create($input);
         $success['token']=$user->createToken("My App")->plainTextToken;
